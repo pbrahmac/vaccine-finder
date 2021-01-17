@@ -50,7 +50,7 @@ const NewLocModal = () => {
             lastUpdatedDate: new Date(),
             locAddress: location,
             locName: name,
-            status: radioOption.toUpperCase(),
+            status: radioOption,
             zipcode: zipCode
         })
 
@@ -229,24 +229,21 @@ const NewLocModal = () => {
                                         </form>
                                     </div>
                                 ) : (
-                                    <div className="relative p-6 flex-auto bg-gray-50">
-                                        <SignIn isNavbar={false} />
+                                    <div>
+                                        <div className="grid grid-cols-3 grid-rows-3 relative p-6 flex-auto bg-gray-50">
+                                            <div className="col-start-2 row-start-2">
+                                                <SignIn isNavbar={false} />
+                                            </div>
+                                        </div>
                                         {/*footer*/}
                                         <div className="flex items-center justify-end p-5 border-t border-solid border-gray-300 rounded-b">
                                             <button
-                                                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                                                className="bg-red-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                                                 type="button"
                                                 style={{ transition: "all .15s ease" }}
-                                                onClick={() => setShowModal(false)}
+                                                onClick={() => setShowModal(false)}    
                                             >
                                                 Close
-                                            </button>
-                                            <button
-                                                className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                                                type="submit"
-                                                style={{ transition: "all .15s ease" }}
-                                            >
-                                                Save Changes
                                             </button>
                                         </div>
                                     </div>
