@@ -6,6 +6,7 @@ import 'firebase/firestore'
 import { useAuthState } from "react-firebase-hooks/auth";
 import useGeoPosition from "../utils/customHooks/useGeoPosition";
 import SignIn from './SignIn';
+import { comment } from 'postcss';
 
 const ExitIcon = () => {
     return (
@@ -42,7 +43,7 @@ const NewLocModal = () => {
         console.log(name, location, zipCode, county, website, radioOption, notes)
 
         // Write to firebase here
-        await locationsRef.add({
+        const newDoc = await locationsRef.add({
             contact: contact,
             coords: position,
             county: county,
@@ -52,6 +53,13 @@ const NewLocModal = () => {
             status: radioOption.toUpperCase(),
             zipcode: zipCode
         })
+
+        const commentsRef = locationsRef.doc(newDoc.id).collection('comments')
+        await commentsRef.add({
+            comment: notes,
+            commentDate: new Date()
+        })
+
         // reset form fields
         setName("")
         setLocation("")
