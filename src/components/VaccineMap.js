@@ -23,7 +23,19 @@ const VaccineMap = ({ locations }) => {
                     lng: davisLoc.lng
                 })
         })
-    },[])
+    }, [davisLoc.lat, davisLoc.lng])
+
+    const getColor = (selected) => {
+        let res = ""
+        if (selected.toLowerCase() === "available") {
+            res = "text-green-500"
+        } else if (selected.toLowerCase() === "coming_soon") {
+            res = "text-yellow-500"
+        } else {
+            res = "text-red-400"
+        }
+        return res
+    }
 
     return (
         <div>
@@ -41,7 +53,7 @@ const VaccineMap = ({ locations }) => {
                         <InfoWindow position={selected.coords} clickable={true} onCloseClick={() => setSelected({})}>
                             <div>
                                 <h1 className="text-lg font-medium">{selected.locName}</h1>
-                                <p>Vaccines are <span className={selected.status === "Available" ? "text-green-500" : "text-red-400"}>{selected.status.toLowerCase()}</span> at this location.</p>
+                                <p>Vaccines are <span className={`${getColor(selected.status)}`}>{selected.status.toLowerCase()}</span> at this location.</p>
                             </div>
                         </InfoWindow>
                     )}
