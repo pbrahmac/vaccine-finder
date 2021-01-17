@@ -12,10 +12,16 @@ const App = () => {
   const auth = firebase.auth()
   
   return (
-    <div className="App">
+    <div>
       <Navbar />
-      <VaccineMap />
-      <DataFetch />
+      <div className="grid grid-cols-4">
+        <div className="col-span-1">
+          <DataFetch />
+        </div>
+        <div className="col-span-3">
+          <VaccineMap />
+        </div>
+      </div>
     </div>
   );
 }

@@ -9,13 +9,17 @@ const DataFetch = () => {
     const firestore = firebase.firestore()
 
     const locationsRef = firestore.collection('locations')
-    const query = locationsRef.orderBy('lastUpdatedDate')
+    const query = locationsRef.orderBy('status')
 
     const [locations] = useCollectionData(query, {idField: 'id'})
 
     return (
-        <div>
-            {locations && locations.map((loc, idx) => <LocationCard key={idx} location={loc}/>)}
+        <div className="grid grid-cols-1 gap-4 p-4">
+            {locations && locations.map((loc, idx) => (
+                <div>
+                    <LocationCard key={idx} location={loc} />
+                </div>
+            ))}
         </div>
     )
 }
