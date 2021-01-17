@@ -71,7 +71,7 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item">
                             <div className="mx-0">
-                                {user ? <SignOut /> : <SignIn />}
+                                {user ? <SignOut /> : <SignIn isNavbar={true} />}
                             </div>
                         </li>
                     </ul>
