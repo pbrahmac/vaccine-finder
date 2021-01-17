@@ -5,14 +5,18 @@ import 'firebase/auth';
 
 import Navbar from "./components/Navbar";
 import MapMaster from "./components/MapMaster";
+import HeaderBox from "./components/HeaderBox";
 
 const App = () => {
   const firebase = useContext(FirebaseContext)
   const auth = firebase.auth()
   
   return (
-    <div>
+    <div className="bg-gray-700" >
       <Navbar />
+      <HeaderBox />
+
+
       <MapMaster />
     </div>
   );

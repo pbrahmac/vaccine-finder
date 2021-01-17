@@ -1,0 +1,21 @@
+import React from 'react'
+
+const HeaderBox = ({  }) => {
+    
+    let btnStyle = "p-2 border-4 border-blue-200 border-opacity-50 rounded-lg text-white text-opacity-75 hover:bg-white-200"
+
+    return (
+        <div className="grid m-10 rounded-2xl pt-40 pb-40 bg-gradient-to-b from-green-400 to-blue-500 justify-items-center">
+           <h1 className="text-5xl mt-10 mb-10 text-white text-opacity-85 font-sa">VaccineFinder</h1>
+           <h2 className="text-2xl mb-10 text-white text-opacity-75">Find your Nearby Vaccine Providers</h2>
+           <div className="flex mb-10 text-lg grid-cols-3 gap-4">
+               <button className={btnStyle}>Find Locations</button>
+               <button className={btnStyle}>Add a Location</button>
+               <button className={btnStyle}>Resources</button>
+               
+           </div>
+        </div>
+    )
+}
+
+export default HeaderBox
