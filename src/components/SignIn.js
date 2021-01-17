@@ -12,7 +12,7 @@ const SignIn = () => {
     }
     
     return (
-        <button className="text-white bg-gray-700 rounded p-3 hover:bg-gray-600" onClick={signInWithGoogle}>Sign in with Google</button>
+        <button className="transition duration-300 ease-in-out text-white uppercase font-semibold bg-gray-800 border-2 border-white rounded px-6 py-2 hover:bg-gray-50 hover:text-black" onClick={signInWithGoogle}>Sign In</button>
     )
 }
 
