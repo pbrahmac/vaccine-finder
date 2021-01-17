@@ -23,7 +23,7 @@ const VaccineMap = ({ locations }) => {
                     lng: davisLoc.lng
                 })
         })
-    })
+    },[])
 
     return (
         <div>

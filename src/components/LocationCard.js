@@ -3,7 +3,7 @@ import React from 'react'
 const LocationCard = ({ location }) => {
     
     let boxStyle = "rounded-md px-8 py-2 max-w-lg border border-black hover:shadow-lg "
-    if (location.status === "Available") {
+    if (location.status.toLowerCase() === "available") {
         boxStyle = boxStyle.concat(" bg-green-50")
     } else {
         boxStyle = boxStyle.concat(" bg-red-50")
