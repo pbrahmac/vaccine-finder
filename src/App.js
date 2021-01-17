@@ -5,6 +5,7 @@ import 'firebase/auth';
 
 import VaccineMap from "./components/VaccineMap";
 import Navbar from "./components/Navbar";
+import DataFetch from "./components/DataFetch";
 
 const App = () => {
   const firebase = useContext(FirebaseContext)
@@ -14,6 +15,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <VaccineMap />
+      <DataFetch />
     </div>
   );
 }

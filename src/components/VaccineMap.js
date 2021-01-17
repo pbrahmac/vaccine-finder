@@ -1,11 +1,8 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { FirebaseContext } from "../utils/firebase";
+import React, { useEffect, useState } from 'react';
 
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
 const VaccineMap = () => {
-    const firebase = useContext(FirebaseContext)
-
     // const davisLoc = { lat: 38.538, lng: -121.762 }
 
     const [currentPos, setCurrentPos] = useState({})
@@ -22,10 +19,13 @@ const VaccineMap = () => {
         navigator.geolocation.getCurrentPosition(success)
     })
 
+    const mapClassNames = "w-screen md:w-3/4 float-right"
+
     return (
         <LoadScript googleMapsApiKey='AIzaSyAgSdjt0f1I1Oh0i9Zj3ESHMf8RHgRd0es'>
             <GoogleMap
-                mapContainerStyle={{height: "90vh", width: "75vw", float: "right"}}
+                mapContainerStyle={{ height: "90vh"}}
+                mapContainerClassName={mapClassNames}
                 zoom={15}
                 center={currentPos}
             />
