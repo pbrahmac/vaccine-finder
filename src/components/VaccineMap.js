@@ -8,28 +8,29 @@ const VaccineMap = () => {
     const [currentPos, setCurrentPos] = useState({})
 
     const success = (position) => {
-        const currentPosition = {
+        setCurrentPos({
             lat: position.coords.latitude,
             lng: position.coords.longitude
-        }
-        setCurrentPos(currentPosition)
+        })
     }
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(success)
     })
 
-    const mapClassNames = "w-screen md:w-3/4 float-right"
+    const mapClassNames = "w-full float-right"
 
     return (
-        <LoadScript googleMapsApiKey=`${process.env.REACT_APP_MAPS_API_KEY}`>
-            <GoogleMap
-                mapContainerStyle={{ height: "90vh"}}
-                mapContainerClassName={mapClassNames}
-                zoom={15}
-                center={currentPos}
-            />
-        </LoadScript>
+        <div>
+            <LoadScript googleMapsApiKey=`${process.env.REACT_APP_MAPS_API_KEY}`>
+                <GoogleMap
+                    mapContainerStyle={{ height: "90vh"}}
+                    mapContainerClassName={mapClassNames}
+                    zoom={15}
+                    center={currentPos}
+                />
+            </LoadScript>
+        </div>
     )
 }
 
