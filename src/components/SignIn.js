@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { FirebaseContext } from "../utils/firebase";
 import 'firebase/auth';
 
@@ -12,7 +12,7 @@ const SignIn = () => {
     }
     
     return (
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+        <button className="text-white bg-gray-700 rounded p-3 hover:bg-gray-600" onClick={signInWithGoogle}>Sign in with Google</button>
     )
 }
 
