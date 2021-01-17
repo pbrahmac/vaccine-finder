@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { FirebaseContext } from "../utils/firebase";
 import 'firebase/firestore'
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import DataFetch from './DataFetch';
+import CardColumn from './CardColumn';
 import VaccineMap from './VaccineMap';
 
 const MapMaster = () => {
@@ -17,7 +17,7 @@ const MapMaster = () => {
     return (
         <div className="grid grid-cols-4">
             <div className="col-span-1">
-                <DataFetch locations={locations} />
+                <CardColumn locations={locations} />
             </div>
             <div className="col-span-3">
                 <VaccineMap locations={locations} />

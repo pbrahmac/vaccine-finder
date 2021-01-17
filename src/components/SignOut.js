@@ -7,7 +7,7 @@ const SignOut = () => {
     const auth = firebase.auth()
     
     return auth.currentUser && (
-        <button className="text-white bg-gray-700 rounded p-3 hover:bg-gray-600" onClick={() => auth.signOut()}>Sign Out</button>
+        <button className="transition duration-300 ease-in-out text-white uppercase font-semibold bg-gray-800 border-2 border-white rounded-md px-3 py-2 hover:bg-gray-50 hover:text-black" onClick={() => auth.signOut()}>Sign Out</button>
     )
 }
 
