@@ -1,23 +1,12 @@
-import React, { useContext } from 'react'
-import { FirebaseContext } from "../utils/firebase";
-import 'firebase/firestore'
-import { useCollectionData } from "react-firebase-hooks/firestore";
+import React from 'react'
 import LocationCard from './LocationCard';
 
-const DataFetch = () => {
-    const firebase = useContext(FirebaseContext)
-    const firestore = firebase.firestore()
-
-    const locationsRef = firestore.collection('locations')
-    const query = locationsRef.orderBy('status')
-
-    const [locations] = useCollectionData(query, {idField: 'id'})
-
+const DataFetch = ({locations}) => {
     return (
         <div className="grid grid-cols-1 gap-4 p-4">
             {locations && locations.map((loc, idx) => (
-                <div>
-                    <LocationCard key={idx} location={loc} />
+                <div key={idx}>
+                    <LocationCard location={loc} />
                 </div>
             ))}
         </div>
