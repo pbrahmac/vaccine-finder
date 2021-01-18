@@ -39,7 +39,7 @@ const VaccineMap = ({ locations }) => {
 
     return (
         <div>
-            <LoadScript googleMapsApiKey=`${process.env.REACT_APP_MAPS_API_KEY}`>
+            <LoadScript googleMapsApiKey={`${process.env.REACT_APP_MAPS_API_KEY}`}>
                 <GoogleMap
                     mapContainerStyle={{ height: "90vh"}}
                     mapContainerClassName="w-full float-right"
