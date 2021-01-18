@@ -16,7 +16,7 @@ const ExitIcon = () => {
     )
 }
 
-const NewLocModal = () => {
+const LocInfoModal = () => {
     const firebase = useContext(FirebaseContext)
     const auth = firebase.auth()
     const firestore = firebase.firestore()
@@ -51,8 +51,7 @@ const NewLocModal = () => {
             locAddress: location,
             locName: name,
             status: radioOption,
-            zipcode: zipCode,
-            website: website
+            zipcode: zipCode
         })
 
         const commentsRef = locationsRef.doc(newDoc.id).collection('comments')
@@ -259,4 +258,4 @@ const NewLocModal = () => {
     )
 }
 
-export default NewLocModal
+export default LocInfoModal
