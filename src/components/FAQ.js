@@ -5,7 +5,7 @@ const FAQ = ({  }) => {
     let btnStyle = "p-2 border-4 border-blue-200 border-opacity-50 rounded-lg text-white text-opacity-75 hover:bg-white-200"
 
     return (
-        <div className="grid m-10 rounded-2xl pt-10 pb-10 bg-gradient-to-b from-green-400 to-blue-500 justify-items-center">
+        <div className="grid m-10 rounded-2xl pt-10 pb-10 bg-gradient-to-b from-green-400 to-blue-500 justify-items-center text-white">
         <div className="grid mt-10 rounded-2xl mb-10">
            <h1 className="text-5xl mt-10 mb-10 text-gray text-opacity-85 font-sa text-center"><b>FAQ</b></h1>
            <h2 className="text-2xl ml-20 mb-5 text-gray text-opacity-75 max-w-5xl text-left"><b>How to use this tool?</b></h2>

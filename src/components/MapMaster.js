@@ -15,12 +15,12 @@ const MapMaster = () => {
     const [locations] = useCollectionData(query, {idField: 'id'})
     
     return (
-        <div className="grid grid-cols-4 mt-10 ml-10 mr-10 bg-gray-700 rounded-md">
+        <div className="grid grid-cols-4 mt-10 ml-10 mr-10 bg-gray-700">
             <div className="col-span-1 mt-10">
                 <CardColumn locations={locations} />
             </div>
 
-            <div className="rounded-md col-span-3 pr-1">
+            <div className="rounded-md col-span-3">
                 <VaccineMap locations={locations} />
             </div>
         </div>

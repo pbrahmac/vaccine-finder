@@ -11,10 +11,10 @@ const CardColumn = ({ locations }) => {
     console.log(locations)
 
     return (
-        <div className="grid grid-cols-1 gap-4 p-4" style={{'overflowY': "scroll", "maxHeight": '80vh'}}>
+        <div className="grid grid-cols-1 gap-4 p-4 overflow-auto" style={{"maxHeight": '80vh'}}>
 
             <div className="flex flex-row">
-                <input className="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full"
+                <input className="px-3 py-3 placeholder-gray-400 rounded-l text-gray-700 relative bg-white text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full"
                     placeholder="City or Zip code"
                     onChange={event => setFilter(event.target.value)}
                 ></input>

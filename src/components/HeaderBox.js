@@ -14,7 +14,7 @@ const HeaderBox = ({  }) => {
            <h1 className="text-5xl tracking-wider mt-10 mb-10 text-white text-opacity-85 font-sa">VaccineFinder</h1>
            <h2 className="text-2xl mb-10 text-white text-opacity-85">Find COVID-19 Vaccine Providers Nearby</h2>
 
-           <div className="flex mb-10 text-lg grid-cols-3 gap-4">
+           <div className="flex mb-10 text-lg grid-cols-3 gap-4 space-x-4">
                <button className={btnStyle} onClick={scrollTop} >Find Locations</button>
                <button className={btnStyle}>Add a Location</button>
                <button className={btnStyle}>Resources</button>
