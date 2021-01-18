@@ -58,19 +58,24 @@ const LocationCard = ({ location }) => {
         // unshow the modal
     }
     
-    let boxStyle = "rounded-md px-8 py-2 max-w-lg hover:shadow-lg bg-gray-50"
-    let statusColor = "text-sm text-right"
+    let boxStyle = "rounded-md p-4 hover:shadow-lg bg-gray-50 grid"
+    let statusColor = "text-sm text-center"
+    let statusBoxColor = "w-24 rounded border-2 "
     let badgeColor = "text-right px-3 py-2 rounded-full"
     if (location.status.toLowerCase() === "available") {
-        statusColor = statusColor.concat(" text-green-300")
+        statusColor = statusColor.concat(" text-green-500")
+        statusBoxColor = statusBoxColor.concat(" bg-green-200 border-green-400")
         badgeColor = badgeColor.concat(" bg-green-100 text-green-600")
     } else if (location.status.toLowerCase() === "coming_soon") {
-        statusColor = statusColor.concat(" text-yellow-300")
+        statusColor = statusColor.concat(" text-yellow-500")
+        statusBoxColor = statusBoxColor.concat(" bg-yellow-200 border-yellow-400")
         badgeColor = badgeColor.concat(" bg-yellow-100 text-yellow-600")
     } else {
-        statusColor = statusColor.concat(" text-red-300")
+        statusColor = statusColor.concat(" text-red-500")
+        statusBoxColor = statusBoxColor.concat(" bg-red-200 border-red-400")
         badgeColor = badgeColor.concat(" bg-red-100 text-red-600")
     }
+
 
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     const lastUpdatedObj = location.lastUpdatedDate.toDate()
@@ -83,12 +88,13 @@ const LocationCard = ({ location }) => {
                 <h3 className="text-sm">{location.locAddress}</h3>
                 
                 <br/>
-                <h3 className='bg-red-100'>{location.numComments} New Reports</h3>
-                <h5 className={statusColor}>{location.status}</h5>
-                <h5 className="text-sm text-right">{lastUpdated}</h5>
-                <button className="rounded-full bg-blue-400 w-6">i</button>
+                <div className={statusBoxColor}>
+                  <h5 className={statusColor}>{location.status}</h5>
+                </div>
+                <div className='bg-yellow-100 text-sm rounded w-28 mt-2 pl-2 pr-2 justify-self-end text-gray-800 underline'>{location.numComments} New Reports</div>
+                <h5 className="text-xs text-right mt-2 text-gray-500">Last updated {lastUpdated}</h5>
+                {/* <button className="rounded bg-gradient-to-r from-blue-400 to-blue-500 text-sm p-1 text-white">More Details ></button> */}
             </div>
-
 
         
             {showModal ? (
