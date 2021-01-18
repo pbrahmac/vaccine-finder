@@ -54,8 +54,8 @@ const LocationCard = ({ location }) => {
         })
 
         // reset form fields
+        setComment("")
         // unshow the modal
-        setShowModal(false)
     }
     
     let boxStyle = "rounded-md px-8 py-2 max-w-lg hover:shadow-lg bg-gray-50"
@@ -148,7 +148,7 @@ const LocationCard = ({ location }) => {
                                 </div>    
                             </div>
                             {/*footer*/}
-                            <div className="flex items-center justify-end p-5 bg-white border-t border-solid border-gray-300 rounded-b">
+                            <div className="flex items-center justify-end p-5 bg-white border-t border-solid border-gray-300 rounded-b-lg">
                                 <button
                                     className="text-white bg-red-500 rounded font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                                     type="submit"
