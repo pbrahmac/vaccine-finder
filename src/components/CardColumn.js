@@ -5,9 +5,6 @@ const CardColumn = ({ locations }) => {
 
     const [filter, setFilter] = useState('');
 
-    const fruit = ['apple', 'banana', 'orange', 'grapefruit',
-        'mango', 'strawberry', 'peach', 'apricot'];
-
     console.log(locations)
 
     return (
