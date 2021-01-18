@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HeaderBox = ({  }) => {
+const HeaderBox = () => {
     
 
     let btnStyle = "p-2 border-4 border-blue-200 border-opacity-50 rounded-lg text-white text-opacity-85 hover:bg-white-200"

@@ -4,15 +4,6 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import SignIn from './SignIn';
-
-const ExitIcon = () => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-        </svg>
-    )
-}
 
 const LocationCard = ({ location }) => {
     const firebase = useContext(FirebaseContext)
@@ -48,10 +39,12 @@ const LocationCard = ({ location }) => {
         e.preventDefault()
 
         // Write to firebase here
-        await commentsRef.add({
-            comment: comment,
-            commentDate: new Date()
-        })
+        if (user) {
+            await commentsRef.add({
+                comment: comment,
+                commentDate: new Date()
+            })
+        }
 
         // reset form fields
         setComment("")

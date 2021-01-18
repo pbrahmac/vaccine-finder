@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import { useState, useEffect} from 'react'
 import axios from 'axios';
 
 const useGeoPosition = (key, address) => {
@@ -28,6 +28,7 @@ const useGeoPosition = (key, address) => {
 
     useEffect(() => {
         fetchLatandLng();
+        //eslint-disable-next-line
     }, [address])
 
     return [position, loading, error]

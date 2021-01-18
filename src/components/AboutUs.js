@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AboutUs = ({  }) => {
+const AboutUs = () => {
     
-    let btnStyle = "p-2 border-4 border-blue-200 border-opacity-50 rounded-lg text-white text-opacity-75 hover:bg-white-200"
+    // let btnStyle = "p-2 border-4 border-blue-200 border-opacity-50 rounded-lg text-white text-opacity-75 hover:bg-white-200"
 
     return (
         <div className="grid m-10 rounded-2xl pt-32 pb-32 bg-gradient-to-b from-green-400 to-blue-500 justify-items-center text-white">

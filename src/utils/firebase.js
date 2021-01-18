@@ -13,7 +13,7 @@ const config = {
     appId: `${process.env.REACT_APP_APP_ID}`,
     measurementId: `${process.env.REACT_APP_MEASUREMENT_ID}`
 }
-
+// eslint-disable-next-line
 export default ({ children }) => {
     if (!app.apps.length) {
         app.initializeApp(config)

@@ -6,7 +6,6 @@ import 'firebase/firestore'
 import { useAuthState } from "react-firebase-hooks/auth";
 import useGeoPosition from "../utils/customHooks/useGeoPosition";
 import SignIn from './SignIn';
-import { comment } from 'postcss';
 
 const ExitIcon = () => {
     return (
@@ -36,7 +35,7 @@ const NewLocModal = () => {
     const [notes, setNotes] = useState("")
 
     //get coords
-    const [position, loading, error] = useGeoPosition(`${process.env.REACT_APP_MAPS_API_KEY}`, location)
+    const [position] = useGeoPosition(`${process.env.REACT_APP_MAPS_API_KEY}`, location)
     
     const formSubmit = async (e) => {
         e.preventDefault()

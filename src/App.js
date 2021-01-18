@@ -1,7 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-
-import { FirebaseContext } from "./utils/firebase";
-import 'firebase/auth';
+import React, { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import MapMaster from "./components/MapMaster";
@@ -16,8 +13,6 @@ import alanBtn from "@alan-ai/alan-sdk-web";
 
 
 const App = () => {
-  const firebase = useContext(FirebaseContext)
-  const auth = firebase.auth()
 
   useEffect(() => {
     alanBtn({
