@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alan-ai/alan-sdk-web": "^1.8.15",
     "@craco/craco": "^6.0.0",
     "@react-google-maps/api": "^2.1.0",
     "@tailwindcss/postcss7-compat": "^2.0.2",
