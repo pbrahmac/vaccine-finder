@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 
 const VaccineMap = ({ locations }) => {    
-    const davisLoc = { lat: 38.538, lng: -121.762 }
+    const defaultLoc = { lat: 37.75260526564933, lng: -122.44790002946517 }
     const [currentPos, setCurrentPos] = useState({})
     const [selected, setSelected] = useState({})
 
@@ -19,11 +19,11 @@ const VaccineMap = ({ locations }) => {
             })
         }, () => {
                 setCurrentPos({
-                    lat: davisLoc.lat,
-                    lng: davisLoc.lng
+                    lat: defaultLoc.lat,
+                    lng: defaultLoc.lng
                 })
         })
-    }, [davisLoc.lat, davisLoc.lng])
+    }, [defaultLoc.lat, defaultLoc.lng])
 
     const getColor = (selected) => {
         let res = ""
