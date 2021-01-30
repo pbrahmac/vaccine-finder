@@ -6,7 +6,6 @@ import 'firebase/firestore'
 import { useAuthState } from "react-firebase-hooks/auth";
 import useGeoPosition from "../utils/customHooks/useGeoPosition";
 import SignIn from './SignIn';
-import { comment } from 'postcss';
 
 const ExitIcon = () => {
     return (
